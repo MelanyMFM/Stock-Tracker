@@ -1,9 +1,22 @@
 import { useState, useMemo } from "react";
 import { useActions } from "../context/ActionsContext";
+import { getStockPrice } from "../services/stockServices";
 
 export default function ActionsTable() {
   const { actions, removeAction, updateAction } = useActions();
   const [search, setSearch] = useState("");
+
+  // prueba stock api
+  const pruebaact = actions[1]
+  console.log(pruebaact);
+
+  async function test() {
+    const symbol =  pruebaact.nombre//"AAPL";  // símbolo de Apple
+    const price = await getStockPrice(symbol);
+    console.log(`Precio para ${symbol}:`, price);
+  }
+  
+  test();
 
   // Filtrar acciones según la búsqueda
   const filtered = useMemo(() => {
@@ -56,6 +69,7 @@ export default function ActionsTable() {
             <th>Precio</th>
             <th>Cantidad</th>
             <th>Fecha</th>
+            <th>Actual</th>
             <th>Eliminar</th>
           </tr>
         </thead>
@@ -84,6 +98,9 @@ export default function ActionsTable() {
                 />
               </td>
               <td>{a.fecha}</td>
+              <td>
+                actual
+              </td>
               <td>
                 <button
                   onClick={() => removeAction(index)}
