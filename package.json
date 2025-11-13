@@ -14,9 +14,11 @@
     "@google/generative-ai": "^0.24.1",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "lucide-react": "^0.553.0",
     "multer": "^2.0.2",
     "react": "19.1.1",
-    "react-dom": "19.1.1"
+    "react-dom": "19.1.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/js": "9.36.0",

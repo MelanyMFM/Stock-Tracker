@@ -1,12 +1,12 @@
-import { Dashboard } from "./views/Dashborard/Dashboard"
+import { ActionsProvider } from "./context/ActionsContext";
+import { Dashboard } from "../src/views/Dashborard/Dashboard";
 
 function App() {
-
   return (
-    <>
-     <Dashboard />
-    </>
-  )
+    <ActionsProvider>
+      <Dashboard />
+    </ActionsProvider>
+  );
 }
 
-export default App
+export default App;
